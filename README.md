@@ -12,7 +12,7 @@ El alcance de esta ontología se limita a la representación de datos de caráct
 
 # Prefijo y espacio de nombres (prefix and namespace)
 
-El prefijo de esta ontología es waste. Se publica en el espacio de nombre: https://w3id.org/def/medioambiente/residuos#. 
+El prefijo de esta ontología es waste. Se publica en el espacio de nombres: https://w3id.org/def/medioambiente/residuos#. 
 
 # Modelo conceptual (ontology conceptualization)
 
