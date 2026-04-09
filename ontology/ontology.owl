@@ -1,0 +1,1059 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/def/medioambiente/residuos#"
+     xml:base="https://w3id.org/def/medioambiente/residuos"
+     xmlns:mod="https://w3id.org/mod#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/def/medioambiente/residuos#">
+        <owl:versionIRI rdf:resource="https://w3id.org/def/medioambiente/residuos/0.1.1"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-01</terms:created>
+        <terms:creator>Laura Gilgado Romero</terms:creator>
+        <terms:description xml:lang="en">Ontology that describes the elements associated with waste management, including facilities, containers and collection points.</terms:description>
+        <terms:description xml:lang="es">Ontología que describe los elementos asociados a la gestión de residuos, incluyendo centros, contenedores y puntos limpios.</terms:description>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:title xml:lang="en">Ontology for the representation of waste management</terms:title>
+        <terms:title xml:lang="es">Ontología para la representación de la gestión de residuos</terms:title>
+        <vann:preferredNamespacePrefix>waste</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://w3id.org/def/medioambiente/residuos#"/>
+        <owl:versionInfo>0.1.1</owl:versionInfo>
+        <mod:createdWith rdf:resource="https://chowlk.linkeddata.es/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionIRI -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionIRI"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    
+
+
+    <!-- https://w3id.org/mod#createdWith -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/mod#createdWith"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#time -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#time"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#hasGeometry -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry">
+        <rdfs:domain rdf:resource="https://schema.org/Place"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Point"/>
+        <rdfs:label>has geometry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.org/address -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.org/address">
+        <rdfs:domain rdf:resource="https://schema.org/Place"/>
+        <rdfs:range rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:label>address</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.org/contactPoint -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.org/contactPoint">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="https://schema.org/ContactPoint"/>
+        <rdfs:label>contact point</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#acceptsWasteType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#acceptsWasteType">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteContainer"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteType"/>
+        <rdfs:label>accepts waste type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#containedInDistrict -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#containedInDistrict">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#Neighborhood"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#District"/>
+        <rdfs:label>contained in district</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#containedInMunicipality -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#containedInMunicipality">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#District"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#Municipality"/>
+        <rdfs:label>contained in municipality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#containedInProvince -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#containedInProvince">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#Municipality"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#Province"/>
+        <rdfs:label>contained in province</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#hasLocation -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#hasLocation">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteContainer"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="https://schema.org/Place"/>
+        <rdfs:label>has location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#hasManagementScope -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#hasManagementScope">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#ManagementScope"/>
+        <rdfs:label>has management scope</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#hasSchedule -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#hasSchedule">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#MobileCollectionPoint"/>
+        <rdfs:range rdf:resource="https://schema.org/Schedule"/>
+        <rdfs:label>has schedule</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#hasTreatmentProcess -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#hasTreatmentProcess">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#TreatmentProcess"/>
+        <rdfs:label>has treatment process</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#locatedInDistrict -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#locatedInDistrict">
+        <rdfs:domain rdf:resource="https://schema.org/Place"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#District"/>
+        <rdfs:label>located in district</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#locatedInMunicipality -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#locatedInMunicipality">
+        <rdfs:domain rdf:resource="https://schema.org/Place"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#Municipality"/>
+        <rdfs:label>located in municipality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#locatedInNeighborhood -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#locatedInNeighborhood">
+        <rdfs:domain rdf:resource="https://schema.org/Place"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#Neighborhood"/>
+        <rdfs:label>located in neighborhood</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#locatedInProvince -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#locatedInProvince">
+        <rdfs:domain rdf:resource="https://schema.org/Place"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#Province"/>
+        <rdfs:label>located in province</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#managesWasteType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#managesWasteType">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteType"/>
+        <rdfs:label>manages waste type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#lat -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#lat">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>lat</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#long -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#long">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>long</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/byDay -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/byDay">
+        <rdfs:domain rdf:resource="https://schema.org/Schedule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>by day</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/dateCreated -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/dateCreated">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>date created</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/dateModified -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/dateModified">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>date modified</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/description -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/description">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/endTime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/endTime">
+        <rdfs:domain rdf:resource="https://schema.org/Schedule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
+        <rdfs:label>end time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/faxNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/faxNumber">
+        <rdfs:domain rdf:resource="https://schema.org/ContactPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>fax number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/legalName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/legalName">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>legal name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/map -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/map">
+        <rdfs:domain rdf:resource="https://schema.org/Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>map</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/model -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/model">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteContainer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>model</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/name -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/name">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#District"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#ManagementScope"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#Municipality"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#Neighborhood"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#Province"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#TreatmentProcess"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/openingHours -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/openingHours">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>opening hours</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/postalCode -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/postalCode">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>postal code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/startTime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/startTime">
+        <rdfs:domain rdf:resource="https://schema.org/Schedule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
+        <rdfs:label>start time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/streetAddress -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/streetAddress">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>street address</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/telephone -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/telephone">
+        <rdfs:domain rdf:resource="https://schema.org/ContactPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>telephone</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#admissibleWasteURL -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#admissibleWasteURL">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#MobileCollectionPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>admissible waste u r l</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#containerBatch -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#containerBatch">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteContainer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>container batch</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#containerLocationCode -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#containerLocationCode">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteContainer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>container location code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#containerType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#containerType">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteContainer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>container type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#districtCode -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#districtCode">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#District"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>district code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#door -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#door">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>door</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#floor -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#floor">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>floor</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#industrialPark -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#industrialPark">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>industrial park</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#isConstructionDemolitionWasteManager -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#isConstructionDemolitionWasteManager">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>is construction demolition waste manager</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#isPubliclyOwned -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#isPubliclyOwned">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>is publicly owned</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#lerCode -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#lerCode">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>ler code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#loadingType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#loadingType">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteContainer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>loading type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#municipalityCode -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#municipalityCode">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#Municipality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>municipality code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#nif -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#nif">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>nif</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#nima -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#nima">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>nima</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#order -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#order">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteContainer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>order</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#provinceCode -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#provinceCode">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#Province"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>province code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#registrationNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#registrationNumber">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>registration number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#registrationType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#registrationType">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>registration type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#secondaryAddress -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#secondaryAddress">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>secondary address</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#shift -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#shift">
+        <rdfs:domain rdf:resource="https://schema.org/Schedule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>shift</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#staircase -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#staircase">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>staircase</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#streetCode -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#streetCode">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>street code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#streetName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#streetName">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>street name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#streetNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#streetNumber">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>street number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#streetNumberType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#streetNumberType">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>street number type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#streetType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#streetType">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>street type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#treatmentProcessNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#treatmentProcessNumber">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#TreatmentProcess"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>treatment process number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#utmX -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#utmX">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>utm x</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#utmY -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/def/medioambiente/residuos#utmY">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Point"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>utm y</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Point -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Point">
+        <rdfs:label>Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/AdministrativeArea -->
+
+
+    <owl:Class rdf:about="https://schema.org/AdministrativeArea">
+        <rdfs:label>Administrative Area</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/ContactPoint -->
+
+
+    <owl:Class rdf:about="https://schema.org/ContactPoint">
+        <rdfs:label>Contact Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/Place -->
+
+
+    <owl:Class rdf:about="https://schema.org/Place">
+        <rdfs:label>Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/PostalAddress -->
+
+
+    <owl:Class rdf:about="https://schema.org/PostalAddress">
+        <rdfs:label>Postal Address</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/Schedule -->
+
+
+    <owl:Class rdf:about="https://schema.org/Schedule">
+        <rdfs:label>Schedule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#CollectionPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#CollectionPoint">
+        <rdfs:label>Collection Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#District -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#District">
+        <rdfs:subClassOf rdf:resource="https://schema.org/AdministrativeArea"/>
+        <rdfs:label>District</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#ManagementScope -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#ManagementScope">
+        <rdfs:label>Management Scope</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#MobileCollectionPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#MobileCollectionPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:label>Mobile Collection Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#Municipality -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#Municipality">
+        <rdfs:subClassOf rdf:resource="https://schema.org/AdministrativeArea"/>
+        <rdfs:label>Municipality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#Neighborhood -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#Neighborhood">
+        <rdfs:subClassOf rdf:resource="https://schema.org/AdministrativeArea"/>
+        <rdfs:label>Neighborhood</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#PermanentCollectionPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#PermanentCollectionPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:label>Permanent Collection Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#Province -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#Province">
+        <rdfs:subClassOf rdf:resource="https://schema.org/AdministrativeArea"/>
+        <rdfs:label>Province</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#TreatmentProcess -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#TreatmentProcess">
+        <rdfs:label>Treatment Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#WasteContainer -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#WasteContainer">
+        <rdfs:label>Waste Container</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#WasteFacility -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#WasteFacility">
+        <rdfs:label>Waste Facility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/def/medioambiente/residuos#WasteType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/def/medioambiente/residuos#WasteType">
+        <rdfs:label>Waste Type</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
