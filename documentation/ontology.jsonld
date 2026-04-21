@@ -1,4 +1,14 @@
 [ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio"
+    }, {
+      "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito"
+    } ]
+  } ]
+}, {
   "@id" : "http://purl.org/dc/terms/created",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -32,52 +42,37 @@
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.opengis.net/ont/geosparql#Point",
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Point"
+    "@value" : "Facility"
+  } ]
+}, {
+  "@id" : "http://www.opengis.net/ont/geosparql#Feature",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Feature"
+  } ]
+}, {
+  "@id" : "http://www.opengis.net/ont/geosparql#Geometry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Geometry"
   } ]
 }, {
   "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Place"
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has geometry"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#Point"
-  } ]
-}, {
-  "@id" : "http://www.opengis.net/ont/geosparql#lat",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#Point"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "lat"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
-  } ]
-}, {
-  "@id" : "http://www.opengis.net/ont/geosparql#long",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#Point"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "long"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+    "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
   } ]
 }, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
-}, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#time",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
   "@id" : "http://www.w3.org/2002/07/owl#versionIRI",
@@ -86,10 +81,28 @@
   "@id" : "http://www.w3.org/2002/07/owl#versionInfo",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "https://schema.org/AdministrativeArea",
+  "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Administrative Area"
+    "@value" : "Concept"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Concept Scheme"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#inScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "in scheme"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
   } ]
 }, {
   "@id" : "https://schema.org/ContactPoint",
@@ -98,46 +111,16 @@
     "@value" : "Contact Point"
   } ]
 }, {
-  "@id" : "https://schema.org/Place",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Place"
-  } ]
-}, {
-  "@id" : "https://schema.org/PostalAddress",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Postal Address"
-  } ]
-}, {
-  "@id" : "https://schema.org/Schedule",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Schedule"
-  } ]
-}, {
   "@id" : "https://schema.org/address",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Place"
+    "@id" : "https://w3id.org/def/medioambiente/residuos#WasteFacility"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "address"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://schema.org/PostalAddress"
-  } ]
-}, {
-  "@id" : "https://schema.org/byDay",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Schedule"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "by day"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
   } ]
 }, {
   "@id" : "https://schema.org/contactPoint",
@@ -190,18 +173,6 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://schema.org/endTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Schedule"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "end time"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#time"
-  } ]
-}, {
   "@id" : "https://schema.org/faxNumber",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -229,7 +200,7 @@
   "@id" : "https://schema.org/map",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Place"
+    "@id" : "https://w3id.org/def/medioambiente/residuos#MobileCollectionPoint"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "map"
@@ -254,20 +225,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/def/medioambiente/residuos#CollectionPoint"
-  }, {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#District"
-  }, {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#ManagementScope"
-  }, {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Municipality"
-  }, {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Neighborhood"
-  }, {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Province"
-  }, {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#TreatmentProcess"
-  }, {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#WasteType"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "name"
@@ -288,42 +245,6 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://schema.org/postalCode",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "postal code"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "https://schema.org/startTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Schedule"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "start time"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#time"
-  } ]
-}, {
-  "@id" : "https://schema.org/streetAddress",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "street address"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "https://schema.org/telephone",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -331,6 +252,122 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "telephone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Barrio"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Distrito"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Municipio"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Provincia"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#perteneceAProvincia",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "pertenece a provincia"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#perteneceAlMunicipio",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio"
+  }, {
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "pertenece al municipio"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Direccion Postal"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#codigoPostal",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "codigo postal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#direccion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "direccion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#locatorName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "locator name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#nombreDeLaVia",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "nombre de la via"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
@@ -369,10 +406,10 @@
     "@id" : "https://w3id.org/def/medioambiente/residuos#"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos/0.1.1"
+    "@id" : "https://w3id.org/def/medioambiente/residuos/1.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.1.1"
+    "@value" : "1.0"
   } ],
   "https://w3id.org/mod#createdWith" : [ {
     "@id" : "https://chowlk.linkeddata.es/"
@@ -382,21 +419,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Collection Point"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#District",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "District"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://schema.org/AdministrativeArea"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#ManagementScope",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Management Scope"
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#MobileCollectionPoint",
@@ -408,24 +433,6 @@
     "@id" : "https://w3id.org/def/medioambiente/residuos#CollectionPoint"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#Municipality",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Municipality"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://schema.org/AdministrativeArea"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#Neighborhood",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Neighborhood"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://schema.org/AdministrativeArea"
-  } ]
-}, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#PermanentCollectionPoint",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
@@ -433,21 +440,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/def/medioambiente/residuos#CollectionPoint"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#Province",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Province"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://schema.org/AdministrativeArea"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#TreatmentProcess",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Treatment Process"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#WasteContainer",
@@ -460,12 +452,11 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Waste Facility"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#WasteType",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Waste Type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility"
+  }, {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#acceptsWasteType",
@@ -479,7 +470,7 @@
     "@value" : "accepts waste type"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#WasteType"
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#admissibleWasteURL",
@@ -494,40 +485,16 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#containedInDistrict",
+  "@id" : "https://w3id.org/def/medioambiente/residuos#belongsTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Neighborhood"
+    "@id" : "https://w3id.org/def/medioambiente/residuos#WasteFacility"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "contained in district"
+    "@value" : "belongs to"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#District"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#containedInMunicipality",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#District"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "contained in municipality"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Municipality"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#containedInProvince",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Municipality"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "contained in province"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Province"
+    "@id" : "_:genid1"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#containerBatch",
@@ -566,22 +533,10 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#districtCode",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#District"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "district code"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#door",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "door"
@@ -593,29 +548,13 @@
   "@id" : "https://w3id.org/def/medioambiente/residuos#floor",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "floor"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#hasLocation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#CollectionPoint"
-  }, {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#WasteContainer"
-  }, {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#WasteFacility"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has location"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://schema.org/Place"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#hasManagementScope",
@@ -627,19 +566,7 @@
     "@value" : "has management scope"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#ManagementScope"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#hasSchedule",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#MobileCollectionPoint"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has schedule"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://schema.org/Schedule"
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#hasTreatmentProcess",
@@ -651,13 +578,13 @@
     "@value" : "has treatment process"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#TreatmentProcess"
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#industrialPark",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "industrial park"
@@ -690,18 +617,6 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#lerCode",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#WasteType"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "ler code"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#loadingType",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -714,54 +629,6 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#locatedInDistrict",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Place"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "located in district"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#District"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#locatedInMunicipality",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Place"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "located in municipality"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Municipality"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#locatedInNeighborhood",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Place"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "located in neighborhood"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Neighborhood"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#locatedInProvince",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Place"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "located in province"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Province"
-  } ]
-}, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#managesWasteType",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -771,19 +638,7 @@
     "@value" : "manages waste type"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#WasteType"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#municipalityCode",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Municipality"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "municipality code"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#nif",
@@ -825,7 +680,7 @@
   "@id" : "https://w3id.org/def/medioambiente/residuos#provinceCode",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#Province"
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "province code"
@@ -861,7 +716,7 @@
   "@id" : "https://w3id.org/def/medioambiente/residuos#secondaryAddress",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "secondary address"
@@ -870,22 +725,10 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#shift",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/Schedule"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "shift"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#staircase",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "staircase"
@@ -897,7 +740,7 @@
   "@id" : "https://w3id.org/def/medioambiente/residuos#streetCode",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "street code"
@@ -906,34 +749,10 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#streetName",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "street name"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#streetNumber",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "street number"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#streetNumberType",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "street number type"
@@ -945,7 +764,7 @@
   "@id" : "https://w3id.org/def/medioambiente/residuos#streetType",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://schema.org/PostalAddress"
+    "@id" : "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "street type"
@@ -954,40 +773,22 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#treatmentProcessNumber",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/def/medioambiente/residuos#TreatmentProcess"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "treatment process number"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  "@id" : "https://w3id.org/kos/medioambiente/residuos/ManagementScope",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#utmX",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#Point"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "utm x"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+  "@id" : "https://w3id.org/kos/medioambiente/residuos/TreatmentProcess",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
   } ]
 }, {
-  "@id" : "https://w3id.org/def/medioambiente/residuos#utmY",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#Point"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "utm y"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+  "@id" : "https://w3id.org/kos/medioambiente/residuos/WasteType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
   } ]
 }, {
   "@id" : "https://w3id.org/mod#createdWith",
