@@ -1,0 +1,100 @@
+prefixes:
+  waste: "https://w3id.org/def/medioambiente/residuos#"
+  wastekos: "https://w3id.org/kos/medioambiente/residuos/"
+  schema: "https://schema.org/"
+  esdir: "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#"
+  esadm: "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"
+  skos: "http://www.w3.org/2004/02/skos/core#"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+
+sources:
+  wasteFacility-source: [dataset-enriquecido-1.csv~csv]
+
+mappings:
+  WasteFacility:
+    sources:
+      - wasteFacility-source
+    s: https://w3id.org/medioambiente/recurso/residuos/$(Número de registro)
+    po:
+      - [a, waste:WasteFacility]
+      - [waste:registrationNumber, $(Número de registro), xsd:string]
+      - [waste:registrationType, $(Tipo de registro), xsd:string]
+      - [schema:legalName, $(Razón social), xsd:string]
+      - [waste:nif, $(NIF), xsd:string]
+      - [waste:nima, $(NIMA), xsd:string]
+      - [waste:isConstructionDemolitionWasteManager, $(Residuos de Construcción y Demolición (RCD)), xsd:boolean]
+      - [schema:contactPoint, https://w3id.org/medioambiente/recurso/residuos/contactPoint/$(Número de registro)~iri]
+      - [waste:hasManagementScope, https://w3id.org/kos/medioambiente/residuos/ManagementScope/$(Alcance de la gestión)~iri]
+      - [waste:hasTreatmentProcess, https://w3id.org/kos/medioambiente/residuos/TreatmentProcess/$(Número de proceso)-$(Descripción del proceso)~iri]
+      - [schema:address, https://w3id.org/medioambiente/recurso/residuos/address/$(Número de registro)~iri]
+      - [waste:managesWasteType, https://w3id.org/kos/medioambiente/residuos/WasteType/$(Código LER de residuo)~iri]
+
+  ContactPoint:
+    sources:
+      - wasteFacility-source
+    s: https://w3id.org/medioambiente/recurso/residuos/contactPoint/$(Número de registro)
+    po:
+      - [a, schema:ContactPoint]
+      - [schema:telephone, $(Teléfono), xsd:string]
+      - [schema:faxNumber, $(Fax), xsd:string]
+
+  ManagementScopeConcept:
+    sources:
+      - wasteFacility-source
+    s: https://w3id.org/kos/medioambiente/residuos/ManagementScope/$(Alcance de la gestión)
+    po:
+      - [a, skos:Concept]
+      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/ManagementScope~iri]
+      - [skos:prefLabel, $(Alcance de la gestión)]
+
+  TreatmentProcessConcept:
+    sources:
+      - wasteFacility-source
+    s: https://w3id.org/kos/medioambiente/residuos/TreatmentProcess/$(Número de proceso)-$(Descripción del proceso)
+    po:
+      - [a, skos:Concept]
+      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/TreatmentProcess~iri]
+      - [skos:prefLabel, $(Descripción del proceso)]
+
+  DireccionPostal:
+    sources:
+      - wasteFacility-source
+    s: https://w3id.org/medioambiente/recurso/residuos/address/$(Número de registro)
+    po:
+      - [a, esdir:DireccionPostal]
+      - [esdir:codigoPostal, $(Código postal), xsd:string]
+      - [waste:streetType, $(Tipo de vía), xsd:string]
+      - [esdir:nombreDeLaVia, $(Nombre de la vía), xsd:string]
+      - [waste:streetNumberType, $(Tipo de número), xsd:string]
+      - [esdir:locatorName, $(Número), xsd:string]
+      - [waste:staircase, $(Escalera), xsd:string]
+      - [waste:floor, $(Piso), xsd:string]
+      - [waste:door, $(Puerta), xsd:string]
+      - [waste:industrialPark, $(Polígono industrial), xsd:string]
+
+  WasteTypeConcept:
+    sources:
+      - wasteFacility-source
+    s: https://w3id.org/kos/medioambiente/residuos/WasteType/$(Código LER de residuo)
+    po:
+      - [a, skos:Concept]
+      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/WasteType~iri]
+      - [skos:prefLabel, $(Descripción del residuo)]
+
+  Municipality:
+    sources:
+      - wasteFacility-source
+    s: https://w3id.org/medioambiente/recurso/residuos/municipality/$(Municipio)
+    po:
+      - [a, esadm:Municipio]
+      - [esadm:perteneceAProvincia, https://w3id.org/medioambiente/recurso/residuos/province/$(Provincia)~iri]
+      - [schema:name, $(Municipio), xsd:string]
+
+  Province:
+    sources:
+      - wasteFacility-source
+    s: https://w3id.org/medioambiente/recurso/residuos/province/$(Provincia)
+    po:
+      - [a, esadm:Provincia]
+      - [waste:provinceCode, $(Código de provincia), xsd:string]
+      - [schema:name, $(Provincia), xsd:string]
