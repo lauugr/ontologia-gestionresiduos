@@ -1,11 +1,11 @@
 prefixes:
   waste: "https://w3id.org/def/medioambiente/residuos#"
   wastekos: "https://w3id.org/kos/medioambiente/residuos/"
-  schema: "https://schema.org/"
   esdir: "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#"
   esadm: "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"
   skos: "http://www.w3.org/2004/02/skos/core#"
   xsd: "http://www.w3.org/2001/XMLSchema#"
+  schema: "https://schema.org/"
 
 sources:
   wasteFacility-source: [dataset-enriquecido-1.csv~csv]
@@ -14,7 +14,7 @@ mappings:
   WasteFacility:
     sources:
       - wasteFacility-source
-    s: https://w3id.org/medioambiente/recurso/residuos/$(Número de registro)
+    s: https://w3id.org/medioambiente/recurso/residuos/wasteFacility/$(Número de registro)
     po:
       - [a, waste:WasteFacility]
       - [waste:registrationNumber, $(Número de registro), xsd:string]
@@ -24,10 +24,10 @@ mappings:
       - [waste:nima, $(NIMA), xsd:string]
       - [waste:isConstructionDemolitionWasteManager, $(Residuos de Construcción y Demolición (RCD)), xsd:boolean]
       - [schema:contactPoint, https://w3id.org/medioambiente/recurso/residuos/contactPoint/$(Número de registro)~iri]
-      - [waste:hasManagementScope, https://w3id.org/kos/medioambiente/residuos/ManagementScope/$(Alcance de la gestión)~iri]
-      - [waste:hasTreatmentProcess, https://w3id.org/kos/medioambiente/residuos/TreatmentProcess/$(Número de proceso)-$(Descripción del proceso)~iri]
+      - [waste:hasManagementScope, https://w3id.org/kos/medioambiente/residuos/managementScope/$(Alcance de la gestión)~iri]
+      - [waste:hasTreatmentProcess, https://w3id.org/kos/medioambiente/residuos/treatmentProcess/$(Número de proceso)-$(Descripción del proceso)~iri]
       - [schema:address, https://w3id.org/medioambiente/recurso/residuos/address/$(Número de registro)~iri]
-      - [waste:managesWasteType, https://w3id.org/kos/medioambiente/residuos/WasteType/$(Código LER de residuo)~iri]
+      - [waste:managesWasteType, https://w3id.org/kos/medioambiente/residuos/wasteType/$(Código LER de residuo)~iri]
 
   ContactPoint:
     sources:
@@ -41,20 +41,20 @@ mappings:
   ManagementScopeConcept:
     sources:
       - wasteFacility-source
-    s: https://w3id.org/kos/medioambiente/residuos/ManagementScope/$(Alcance de la gestión)
+    s: https://w3id.org/kos/medioambiente/residuos/managementScope/$(Alcance de la gestión)
     po:
       - [a, skos:Concept]
-      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/ManagementScope~iri]
-      - [skos:prefLabel, $(Alcance de la gestión)]
+      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/managementScope~iri]
+      - [skos:prefLabel, $(Alcance de la gestión), xsd:string]
 
   TreatmentProcessConcept:
     sources:
       - wasteFacility-source
-    s: https://w3id.org/kos/medioambiente/residuos/TreatmentProcess/$(Número de proceso)-$(Descripción del proceso)
+    s: https://w3id.org/kos/medioambiente/residuos/treatmentProcess/$(Número de proceso)-$(Descripción del proceso)
     po:
       - [a, skos:Concept]
-      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/TreatmentProcess~iri]
-      - [skos:prefLabel, $(Descripción del proceso)]
+      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/treatmentProcess~iri]
+      - [skos:prefLabel, $(Descripción del proceso), xsd:string]
 
   DireccionPostal:
     sources:
@@ -75,11 +75,11 @@ mappings:
   WasteTypeConcept:
     sources:
       - wasteFacility-source
-    s: https://w3id.org/kos/medioambiente/residuos/WasteType/$(Código LER de residuo)
+    s: https://w3id.org/kos/medioambiente/residuos/wasteType/$(Código LER de residuo)
     po:
       - [a, skos:Concept]
-      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/WasteType~iri]
-      - [skos:prefLabel, $(Descripción del residuo)]
+      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/wasteType~iri]
+      - [skos:prefLabel, $(Descripción del residuo), xsd:string]
 
   Municipality:
     sources:

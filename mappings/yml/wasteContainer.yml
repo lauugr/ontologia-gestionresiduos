@@ -1,11 +1,11 @@
 prefixes:
   waste: "https://w3id.org/def/medioambiente/residuos#"
   wastekos: "https://w3id.org/kos/medioambiente/residuos/"
-  schema: "https://schema.org/"
   esdir: "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#"
   esadm: "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"
   skos: "http://www.w3.org/2004/02/skos/core#"
   xsd: "http://www.w3.org/2001/XMLSchema#"
+  schema: "https://schema.org/"
 
 sources:
   wasteContainer-source: [dataset-enriquecido-4.csv~csv]
@@ -14,7 +14,7 @@ mappings:
   WasteContainer:
     sources:
       - wasteContainer-source
-    s: https://w3id.org/medioambiente/recurso/residuos/container/$(Orden)
+    s: https://w3id.org/medioambiente/recurso/residuos/wasteContainer/$(Orden)
     po:
       - [a, waste:WasteContainer]
       - [waste:order, $(Orden), xsd:int]
@@ -22,7 +22,7 @@ mappings:
       - [waste:containerBatch, $(Lote), xsd:int]
       - [waste:loadingType, $(Carga), xsd:string]
       - [waste:containerLocationCode, $(Código de localización), xsd:string]
-      - [waste:acceptsWasteType, https://w3id.org/kos/medioambiente/residuos/WasteType/$(Tipo de contenedor)~iri]
+      - [waste:acceptsWasteType, https://w3id.org/kos/medioambiente/residuos/wasteType/$(Tipo de contenedor)~iri]
       - [schema:address, https://w3id.org/medioambiente/recurso/residuos/address/$(Código de localización)~iri]
       - [waste:belongsTo, https://w3id.org/medioambiente/recurso/residuos/neighborhood/$(Barrio)~iri]
       - [waste:belongsTo, https://w3id.org/medioambiente/recurso/residuos/district/$(Distrito)~iri]
@@ -30,11 +30,11 @@ mappings:
   WasteTypeConcept:
     sources:
       - wasteContainer-source
-    s: https://w3id.org/kos/medioambiente/residuos/WasteType/$(Tipo de contenedor)
+    s: https://w3id.org/kos/medioambiente/residuos/wasteType/$(Tipo de contenedor)
     po:
       - [a, skos:Concept]
-      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/WasteType~iri]
-      - [skos:prefLabel, $(Tipo de contenedor)]
+      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/wasteType~iri]
+      - [skos:prefLabel, $(Tipo de contenedor), xsd:string]
 
   DireccionPostal:
     sources:

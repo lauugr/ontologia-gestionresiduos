@@ -1,0 +1,559 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix map: <http://mapping.example.com/> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix schema: <https://schema.org/> .
+@prefix waste: <https://w3id.org/def/medioambiente/residuos#> .
+@prefix wastekos: <https://w3id.org/kos/medioambiente/residuos/> .
+@prefix esdir: <https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#> .
+@prefix esadm: <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+
+map:map_ContactPoint_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "ContactPoint" ;
+	rr:predicateObjectMap map:pom_012, map:pom_013, map:pom_014 ;
+	rr:subjectMap map:s_001 .
+
+map:map_DireccionPostal_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "DireccionPostal" ;
+	rr:predicateObjectMap map:pom_021, map:pom_022, map:pom_023, map:pom_024, map:pom_025, map:pom_026, map:pom_027, map:pom_028, map:pom_029, map:pom_030 ;
+	rr:subjectMap map:s_004 .
+
+map:map_ManagementScopeConcept_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "ManagementScopeConcept" ;
+	rr:predicateObjectMap map:pom_015, map:pom_016, map:pom_017 ;
+	rr:subjectMap map:s_002 .
+
+map:map_Municipality_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "Municipality" ;
+	rr:predicateObjectMap map:pom_034, map:pom_035, map:pom_036 ;
+	rr:subjectMap map:s_006 .
+
+map:map_Province_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "Province" ;
+	rr:predicateObjectMap map:pom_037, map:pom_038, map:pom_039 ;
+	rr:subjectMap map:s_007 .
+
+map:map_TreatmentProcessConcept_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "TreatmentProcessConcept" ;
+	rr:predicateObjectMap map:pom_018, map:pom_019, map:pom_020 ;
+	rr:subjectMap map:s_003 .
+
+map:map_WasteFacility_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "WasteFacility" ;
+	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008, map:pom_009, map:pom_010, map:pom_011 ;
+	rr:subjectMap map:s_000 .
+
+map:map_WasteTypeConcept_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "WasteTypeConcept" ;
+	rr:predicateObjectMap map:pom_031, map:pom_032, map:pom_033 ;
+	rr:subjectMap map:s_005 .
+
+map:om_000 rdf:type rr:ObjectMap ;
+	rr:constant waste:WasteFacility ;
+	rr:termType rr:IRI .
+
+map:om_001 rml:reference "Número de registro" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_002 rml:reference "Tipo de registro" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_003 rml:reference "Razón social" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_004 rml:reference "NIF" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_005 rml:reference "NIMA" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_006 rml:reference "Residuos de Construcción y Demolición (RCD)" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:boolean ;
+	rr:termType rr:Literal .
+
+map:om_007 rdf:type rr:ObjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/contactPoint/{Número de registro}" ;
+	rr:termType rr:IRI .
+
+map:om_008 rdf:type rr:ObjectMap ;
+	rr:template "https://w3id.org/kos/medioambiente/residuos/managementScope/{Alcance de la gestión}" ;
+	rr:termType rr:IRI .
+
+map:om_009 rdf:type rr:ObjectMap ;
+	rr:template "https://w3id.org/kos/medioambiente/residuos/treatmentProcess/{Número de proceso}-{Descripción del proceso}" ;
+	rr:termType rr:IRI .
+
+map:om_010 rdf:type rr:ObjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/address/{Número de registro}" ;
+	rr:termType rr:IRI .
+
+map:om_011 rdf:type rr:ObjectMap ;
+	rr:template "https://w3id.org/kos/medioambiente/residuos/wasteType/{Código LER de residuo}" ;
+	rr:termType rr:IRI .
+
+map:om_012 rdf:type rr:ObjectMap ;
+	rr:constant schema:ContactPoint ;
+	rr:termType rr:IRI .
+
+map:om_013 rml:reference "Teléfono" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_014 rml:reference "Fax" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_015 rdf:type rr:ObjectMap ;
+	rr:constant skos:Concept ;
+	rr:termType rr:IRI .
+
+map:om_016 rdf:type rr:ObjectMap ;
+	rr:constant wastekos:managementScope ;
+	rr:termType rr:IRI .
+
+map:om_017 rml:reference "Alcance de la gestión" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_018 rdf:type rr:ObjectMap ;
+	rr:constant skos:Concept ;
+	rr:termType rr:IRI .
+
+map:om_019 rdf:type rr:ObjectMap ;
+	rr:constant wastekos:treatmentProcess ;
+	rr:termType rr:IRI .
+
+map:om_020 rml:reference "Descripción del proceso" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_021 rdf:type rr:ObjectMap ;
+	rr:constant esdir:DireccionPostal ;
+	rr:termType rr:IRI .
+
+map:om_022 rml:reference "Código postal" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_023 rml:reference "Tipo de vía" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_024 rml:reference "Nombre de la vía" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_025 rml:reference "Tipo de número" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_026 rml:reference "Número" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_027 rml:reference "Escalera" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_028 rml:reference "Piso" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_029 rml:reference "Puerta" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_030 rml:reference "Polígono industrial" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_031 rdf:type rr:ObjectMap ;
+	rr:constant skos:Concept ;
+	rr:termType rr:IRI .
+
+map:om_032 rdf:type rr:ObjectMap ;
+	rr:constant wastekos:wasteType ;
+	rr:termType rr:IRI .
+
+map:om_033 rml:reference "Descripción del residuo" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_034 rdf:type rr:ObjectMap ;
+	rr:constant esadm:Municipio ;
+	rr:termType rr:IRI .
+
+map:om_035 rdf:type rr:ObjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/province/{Provincia}" ;
+	rr:termType rr:IRI .
+
+map:om_036 rml:reference "Municipio" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_037 rdf:type rr:ObjectMap ;
+	rr:constant esadm:Provincia ;
+	rr:termType rr:IRI .
+
+map:om_038 rml:reference "Código de provincia" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_039 rml:reference "Provincia" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:pm_000 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_001 rdf:type rr:PredicateMap ;
+	rr:constant waste:registrationNumber .
+
+map:pm_002 rdf:type rr:PredicateMap ;
+	rr:constant waste:registrationType .
+
+map:pm_003 rdf:type rr:PredicateMap ;
+	rr:constant schema:legalName .
+
+map:pm_004 rdf:type rr:PredicateMap ;
+	rr:constant waste:nif .
+
+map:pm_005 rdf:type rr:PredicateMap ;
+	rr:constant waste:nima .
+
+map:pm_006 rdf:type rr:PredicateMap ;
+	rr:constant waste:isConstructionDemolitionWasteManager .
+
+map:pm_007 rdf:type rr:PredicateMap ;
+	rr:constant schema:contactPoint .
+
+map:pm_008 rdf:type rr:PredicateMap ;
+	rr:constant waste:hasManagementScope .
+
+map:pm_009 rdf:type rr:PredicateMap ;
+	rr:constant waste:hasTreatmentProcess .
+
+map:pm_010 rdf:type rr:PredicateMap ;
+	rr:constant schema:address .
+
+map:pm_011 rdf:type rr:PredicateMap ;
+	rr:constant waste:managesWasteType .
+
+map:pm_012 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_013 rdf:type rr:PredicateMap ;
+	rr:constant schema:telephone .
+
+map:pm_014 rdf:type rr:PredicateMap ;
+	rr:constant schema:faxNumber .
+
+map:pm_015 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_016 rdf:type rr:PredicateMap ;
+	rr:constant skos:inScheme .
+
+map:pm_017 rdf:type rr:PredicateMap ;
+	rr:constant skos:prefLabel .
+
+map:pm_018 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_019 rdf:type rr:PredicateMap ;
+	rr:constant skos:inScheme .
+
+map:pm_020 rdf:type rr:PredicateMap ;
+	rr:constant skos:prefLabel .
+
+map:pm_021 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_022 rdf:type rr:PredicateMap ;
+	rr:constant esdir:codigoPostal .
+
+map:pm_023 rdf:type rr:PredicateMap ;
+	rr:constant waste:streetType .
+
+map:pm_024 rdf:type rr:PredicateMap ;
+	rr:constant esdir:nombreDeLaVia .
+
+map:pm_025 rdf:type rr:PredicateMap ;
+	rr:constant waste:streetNumberType .
+
+map:pm_026 rdf:type rr:PredicateMap ;
+	rr:constant esdir:locatorName .
+
+map:pm_027 rdf:type rr:PredicateMap ;
+	rr:constant waste:staircase .
+
+map:pm_028 rdf:type rr:PredicateMap ;
+	rr:constant waste:floor .
+
+map:pm_029 rdf:type rr:PredicateMap ;
+	rr:constant waste:door .
+
+map:pm_030 rdf:type rr:PredicateMap ;
+	rr:constant waste:industrialPark .
+
+map:pm_031 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_032 rdf:type rr:PredicateMap ;
+	rr:constant skos:inScheme .
+
+map:pm_033 rdf:type rr:PredicateMap ;
+	rr:constant skos:prefLabel .
+
+map:pm_034 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_035 rdf:type rr:PredicateMap ;
+	rr:constant esadm:perteneceAProvincia .
+
+map:pm_036 rdf:type rr:PredicateMap ;
+	rr:constant schema:name .
+
+map:pm_037 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_038 rdf:type rr:PredicateMap ;
+	rr:constant waste:provinceCode .
+
+map:pm_039 rdf:type rr:PredicateMap ;
+	rr:constant schema:name .
+
+map:pom_000 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_000 ;
+	rr:predicateMap map:pm_000 .
+
+map:pom_001 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_001 ;
+	rr:predicateMap map:pm_001 .
+
+map:pom_002 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_002 ;
+	rr:predicateMap map:pm_002 .
+
+map:pom_003 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_003 ;
+	rr:predicateMap map:pm_003 .
+
+map:pom_004 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_004 ;
+	rr:predicateMap map:pm_004 .
+
+map:pom_005 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_005 ;
+	rr:predicateMap map:pm_005 .
+
+map:pom_006 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_006 ;
+	rr:predicateMap map:pm_006 .
+
+map:pom_007 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_007 ;
+	rr:predicateMap map:pm_007 .
+
+map:pom_008 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_008 ;
+	rr:predicateMap map:pm_008 .
+
+map:pom_009 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_009 ;
+	rr:predicateMap map:pm_009 .
+
+map:pom_010 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_010 ;
+	rr:predicateMap map:pm_010 .
+
+map:pom_011 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_011 ;
+	rr:predicateMap map:pm_011 .
+
+map:pom_012 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_012 ;
+	rr:predicateMap map:pm_012 .
+
+map:pom_013 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_013 ;
+	rr:predicateMap map:pm_013 .
+
+map:pom_014 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_014 ;
+	rr:predicateMap map:pm_014 .
+
+map:pom_015 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_015 ;
+	rr:predicateMap map:pm_015 .
+
+map:pom_016 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_016 ;
+	rr:predicateMap map:pm_016 .
+
+map:pom_017 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_017 ;
+	rr:predicateMap map:pm_017 .
+
+map:pom_018 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_018 ;
+	rr:predicateMap map:pm_018 .
+
+map:pom_019 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_019 ;
+	rr:predicateMap map:pm_019 .
+
+map:pom_020 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_020 ;
+	rr:predicateMap map:pm_020 .
+
+map:pom_021 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_021 ;
+	rr:predicateMap map:pm_021 .
+
+map:pom_022 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_022 ;
+	rr:predicateMap map:pm_022 .
+
+map:pom_023 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_023 ;
+	rr:predicateMap map:pm_023 .
+
+map:pom_024 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_024 ;
+	rr:predicateMap map:pm_024 .
+
+map:pom_025 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_025 ;
+	rr:predicateMap map:pm_025 .
+
+map:pom_026 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_026 ;
+	rr:predicateMap map:pm_026 .
+
+map:pom_027 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_027 ;
+	rr:predicateMap map:pm_027 .
+
+map:pom_028 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_028 ;
+	rr:predicateMap map:pm_028 .
+
+map:pom_029 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_029 ;
+	rr:predicateMap map:pm_029 .
+
+map:pom_030 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_030 ;
+	rr:predicateMap map:pm_030 .
+
+map:pom_031 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_031 ;
+	rr:predicateMap map:pm_031 .
+
+map:pom_032 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_032 ;
+	rr:predicateMap map:pm_032 .
+
+map:pom_033 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_033 ;
+	rr:predicateMap map:pm_033 .
+
+map:pom_034 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_034 ;
+	rr:predicateMap map:pm_034 .
+
+map:pom_035 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_035 ;
+	rr:predicateMap map:pm_035 .
+
+map:pom_036 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_036 ;
+	rr:predicateMap map:pm_036 .
+
+map:pom_037 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_037 ;
+	rr:predicateMap map:pm_037 .
+
+map:pom_038 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_038 ;
+	rr:predicateMap map:pm_038 .
+
+map:pom_039 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_039 ;
+	rr:predicateMap map:pm_039 .
+
+map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_ContactPoint_000, map:map_DireccionPostal_000, map:map_ManagementScopeConcept_000, map:map_Municipality_000, map:map_Province_000, map:map_TreatmentProcessConcept_000, map:map_WasteFacility_000, map:map_WasteTypeConcept_000 ;
+	rdf:type <http://rdfs.org/ns/void#Dataset> .
+
+map:s_000 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/wasteFacility/{Número de registro}" .
+
+map:s_001 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/contactPoint/{Número de registro}" .
+
+map:s_002 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/kos/medioambiente/residuos/managementScope/{Alcance de la gestión}" .
+
+map:s_003 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/kos/medioambiente/residuos/treatmentProcess/{Número de proceso}-{Descripción del proceso}" .
+
+map:s_004 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/address/{Número de registro}" .
+
+map:s_005 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/kos/medioambiente/residuos/wasteType/{Código LER de residuo}" .
+
+map:s_006 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/municipality/{Municipio}" .
+
+map:s_007 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/province/{Provincia}" .
+
+map:source_000 rml:referenceFormulation ql:CSV ;
+	rml:source "dataset-enriquecido-1.csv" ;
+	rdf:type rml:LogicalSource ;
+	rdfs:label "wasteFacility-source" .
+

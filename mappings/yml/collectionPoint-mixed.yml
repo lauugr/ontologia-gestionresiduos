@@ -1,15 +1,12 @@
 prefixes:
   waste: "https://w3id.org/def/medioambiente/residuos#"
-  wastekos: "https://w3id.org/kos/medioambiente/residuos/"
-  schema: "https://schema.org/"
   esdir: "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#"
   esadm: "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"
-  skos: "http://www.w3.org/2004/02/skos/core#"
   xsd: "http://www.w3.org/2001/XMLSchema#"
   dcterms: "http://purl.org/dc/terms/"
+  schema: "https://schema.org/"
 
 sources:
-  mobileCollectionPoint-source: [dataset-enriquecido-2.csv~csv]
   mixedCollectionPoint-source: [dataset-enriquecido-3.csv~csv]
 
 mappings:
@@ -32,18 +29,6 @@ mappings:
 
   MobileCollectionPoint:
     sources:
-      - mobileCollectionPoint-source
-    s: https://w3id.org/medioambiente/recurso/residuos/collectionPoint/mobile/$(Código de distrito)-$(Tipo de vía)-$(Nombre de la vía)-$(Tipo de número)-$(Número)-$(Día de la semana)-$(Turno)-$(Hora de inicio)
-    po:
-      - [a, waste:MobileCollectionPoint]
-      - [schema:openingHours, $(Día de la semana) $(Turno) $(Hora de inicio)-$(Hora de fin), xsd:string]
-      - [schema:address, https://w3id.org/medioambiente/recurso/residuos/address/$(Código de distrito)-$(Tipo de vía)-$(Nombre de la vía)-$(Tipo de número)-$(Número)~iri]
-      - [waste:admissibleWasteURL, $(Residuos admisibles), xsd:anyURI]
-      - [schema:map, $(Google Maps), xsd:anyURI]
-      - [waste:belongsTo, https://w3id.org/medioambiente/recurso/residuos/district/$(Distrito)~iri]
-
-  MobileCollectionPointMixed:
-    sources:
       - mixedCollectionPoint-source
     s: https://w3id.org/medioambiente/recurso/residuos/collectionPoint/mobile/$(Identificador)
     po:
@@ -59,27 +44,6 @@ mappings:
       - [schema:contactPoint, https://w3id.org/medioambiente/recurso/residuos/contactPoint/$(Identificador)~iri]
       - [waste:belongsTo, https://w3id.org/medioambiente/recurso/residuos/district/$(Distrito)~iri]
 
-  DireccionPostalMobileDataset:
-    sources:
-      - mobileCollectionPoint-source
-    s: https://w3id.org/medioambiente/recurso/residuos/address/$(Código de distrito)-$(Tipo de vía)-$(Nombre de la vía)-$(Tipo de número)-$(Número)
-    po:
-      - [a, esdir:DireccionPostal]
-      - [esdir:direccion, $(Dirección), xsd:string]
-      - [waste:secondaryAddress, $(Dirección auxiliar), xsd:string]
-      - [waste:streetType, $(Tipo de vía), xsd:string]
-      - [esdir:nombreDeLaVia, $(Nombre de la vía), xsd:string]
-      - [waste:streetNumberType, $(Tipo de número), xsd:string]
-      - [esdir:locatorName, $(Número), xsd:string]
-
-  DistrictMobileDataset:
-    sources:
-      - mobileCollectionPoint-source
-    s: https://w3id.org/medioambiente/recurso/residuos/district/$(Distrito)
-    po:
-      - [a, esadm:Distrito]
-      - [schema:name, $(Distrito), xsd:string]
-
   ContactPoint:
     sources:
       - mixedCollectionPoint-source
@@ -88,7 +52,7 @@ mappings:
       - [a, schema:ContactPoint]
       - [schema:telephone, $(Teléfono), xsd:string]
 
-  DireccionPostalMixedDataset:
+  DireccionPostal:
     sources:
       - mixedCollectionPoint-source
     s: https://w3id.org/medioambiente/recurso/residuos/address/$(Identificador)
@@ -97,7 +61,7 @@ mappings:
       - [esdir:direccion, $(Dirección), xsd:string]
       - [esdir:codigoPostal, $(Código postal), xsd:string]
 
-  DistrictMixedDataset:
+  District:
     sources:
       - mixedCollectionPoint-source
     s: https://w3id.org/medioambiente/recurso/residuos/district/$(Distrito)
