@@ -1,0 +1,126 @@
+# =========================================
+# VALIDACIÓN DEL GRAFO RDF
+# =========================================
+
+PREFIX waste: <https://w3id.org/def/medioambiente/residuos#>
+PREFIX esdir: <https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#>
+PREFIX esadm: <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX schema: <https://schema.org/>
+
+# -----------------------------------------
+# 1. Número total de centros de gestión
+# -----------------------------------------
+SELECT (COUNT(?wf) AS ?numWasteFacilities)
+WHERE {
+  ?wf rdf:type waste:WasteFacility .
+}
+
+# -----------------------------------------
+# 2. Número total de contenedores
+# -----------------------------------------
+SELECT (COUNT(?wc) AS ?numWasteContainers)
+WHERE {
+  ?wc rdf:type waste:WasteContainer .
+}
+
+# -----------------------------------------
+# 3. Número total de puntos limpios por tipo
+# -----------------------------------------
+SELECT ?tipo (COUNT(?cp) AS ?num)
+WHERE {
+  ?cp rdf:type ?tipo .
+  VALUES ?tipo { waste:PermanentCollectionPoint waste:MobileCollectionPoint }
+}
+GROUP BY ?tipo
+
+# -----------------------------------------
+# 4. Centros de gestión sin número de registro
+# -----------------------------------------
+SELECT ?wf
+WHERE {
+  ?wf rdf:type waste:WasteFacility .
+  FILTER NOT EXISTS { ?wf waste:registrationNumber ?reg }
+}
+
+# -----------------------------------------
+# 5. Centros de gestión sin dirección
+# -----------------------------------------
+SELECT ?wf
+WHERE {
+  ?wf rdf:type waste:WasteFacility .
+  FILTER NOT EXISTS { ?wf schema:address ?addr }
+}
+
+# -----------------------------------------
+# 6. 'order' mal tipado en contenedores
+# -----------------------------------------
+SELECT ?wc ?order
+WHERE {
+  ?wc rdf:type waste:WasteContainer ;
+      waste:order ?order .
+  FILTER (datatype(?order) != xsd:int)
+}
+
+# -----------------------------------------
+# 7. 'isConstructionDemolitionWasteManager' mal tipado en centros de gestión
+# -----------------------------------------
+SELECT ?wf ?value
+WHERE {
+  ?wf rdf:type waste:WasteFacility ;
+      waste:isConstructionDemolitionWasteManager ?value .
+  FILTER (datatype(?value) != xsd:boolean)
+}
+
+# -----------------------------------------
+# 8. 'isPubliclyOwned' mal tipado en puntos limpios
+# -----------------------------------------
+SELECT ?cp ?value
+WHERE {
+  ?cp rdf:type ?tipo ;
+      waste:isPubliclyOwned ?value .
+  VALUES ?tipo { waste:PermanentCollectionPoint waste:MobileCollectionPoint }
+  FILTER (datatype(?value) != xsd:boolean)
+}
+
+# -----------------------------------------
+# 9. Direcciones sin literal de dirección
+# -----------------------------------------
+SELECT ?addr
+WHERE {
+  ?addr rdf:type esdir:DireccionPostal .
+  FILTER NOT EXISTS { ?addr esdir:direccion ?dir }
+}
+
+# -----------------------------------------
+# 10. Municipios sin provincia
+# -----------------------------------------
+SELECT ?m
+WHERE {
+  ?m rdf:type esadm:Municipio .
+  FILTER NOT EXISTS { ?m esadm:perteneceAProvincia ?p }
+}
+
+# -----------------------------------------
+# 11. Duplicados de número de registro en centros de gestión
+# -----------------------------------------
+SELECT ?reg (COUNT(?wf) AS ?num)
+WHERE {
+  ?wf rdf:type waste:WasteFacility ;
+      waste:registrationNumber ?reg .
+}
+GROUP BY ?reg
+HAVING (COUNT(?wf) > 1)
+
+# -----------------------------------------
+# 12. Contenedores con 'belongsTo' apuntando a recursos no territoriales esperados
+# -----------------------------------------
+SELECT ?wc ?loc
+WHERE {
+  ?wc rdf:type waste:WasteContainer ;
+      waste:belongsTo ?loc .
+  FILTER NOT EXISTS { ?loc rdf:type esadm:Barrio }
+  FILTER NOT EXISTS { ?loc rdf:type esadm:Distrito }
+}
