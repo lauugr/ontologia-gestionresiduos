@@ -87,6 +87,6 @@ Sin resultados
 Las primeras tres consultas indican que el grafo contiene 794 centros de gestión, 44249 contenedores y un total de 467 puntos limpios, de los cuales 409 son móviles y 58 permanentes.
 El resto de consultas, excepto la 9, no devuelve resultados, lo que indica que no se han detectado errores en los aspectos validados.
 
-La consulta relativa a direcciones sin literal `esdir:direccion devuelve resultados debido a que, en el caso de los centros de gestión, la dirección se ha modelado mediante atributos desglosados (como tipo de vía, nombre de la vía o número), en lugar de un único literal completo. Por tanto, este resultado no se considera un error, sino una consecuencia del modelo adoptado.
+La consulta relativa a direcciones sin literal `esdir:direccion` devuelve resultados debido a que, en el caso de los centros de gestión, la dirección se ha modelado mediante atributos desglosados (como tipo de vía, nombre de la vía o número), en lugar de un único literal completo. Por tanto, este resultado no se considera un error, sino una consecuencia del modelo adoptado.
 
 En consecuencia, el grafo RDF generado presenta un alto nivel de calidad y consistencia.
