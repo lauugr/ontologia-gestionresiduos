@@ -62,6 +62,18 @@
     "@value" : "Geometry"
   } ]
 }, {
+  "@id" : "http://www.opengis.net/ont/geosparql#asWKT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "as w k t"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#wktLiteral"
+  } ]
+}, {
   "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -73,6 +85,9 @@
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
   } ]
+}, {
+  "@id" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
@@ -428,6 +443,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility"
+  }, {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#MobileCollectionPoint",
@@ -452,6 +469,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Waste Container"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
   } ]
 }, {
   "@id" : "https://w3id.org/def/medioambiente/residuos#WasteFacility",

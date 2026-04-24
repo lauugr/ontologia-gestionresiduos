@@ -68,6 +68,10 @@ owl:versionInfo rdf:type owl:AnnotationProperty .
 #    Datatypes
 #################################################################
 
+###  http://www.opengis.net/ont/geosparql#wktLiteral
+<http://www.opengis.net/ont/geosparql#wktLiteral> rdf:type rdfs:Datatype .
+
+
 ###  http://www.w3.org/2001/XMLSchema#date
 xsd:date rdf:type rdfs:Datatype .
 
@@ -174,6 +178,13 @@ xsd:date rdf:type rdfs:Datatype .
                                       rdfs:domain :CollectionPoint ;
                                       rdfs:range xsd:string ;
                                       rdfs:label "identifier" .
+
+
+###  http://www.opengis.net/ont/geosparql#asWKT
+<http://www.opengis.net/ont/geosparql#asWKT> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <http://www.opengis.net/ont/geosparql#Geometry> ;
+                                             rdfs:range <http://www.opengis.net/ont/geosparql#wktLiteral> ;
+                                             rdfs:label "as w k t" .
 
 
 ###  https://schema.org/dateCreated
@@ -486,7 +497,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/def/medioambiente/residuos#CollectionPoint
 :CollectionPoint rdf:type owl:Class ;
-                 rdfs:subClassOf <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility> ;
+                 rdfs:subClassOf <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility> ,
+                                 <http://www.opengis.net/ont/geosparql#Feature> ;
                  rdfs:label "Collection Point" .
 
 
@@ -504,6 +516,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/def/medioambiente/residuos#WasteContainer
 :WasteContainer rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
                 rdfs:label "Waste Container" .
 
 

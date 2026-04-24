@@ -52,7 +52,7 @@ This section provides details for each class and property defined by Ontology fo
     has super-classes
    </dt>
    <dd>
-    <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility" title="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility">Facility</a> <sup class="type-c" title="class">c</sup>
+    <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility" title="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/infraestructura#Facility">Facility</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.opengis.net/ont/geosparql#Feature" title="http://www.opengis.net/ont/geosparql#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has sub-classes
@@ -184,7 +184,7 @@ This section provides details for each class and property defined by Ontology fo
     has sub-classes
    </dt>
    <dd>
-    <a href="#https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio" title="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio">Barrio</a> <sup class="type-c" title="class">c</sup>, <a href="#https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito" title="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito">Distrito</a> <sup class="type-c" title="class">c</sup>, <a href="#https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio" title="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio">Municipio</a> <sup class="type-c" title="class">c</sup>, <a href="#https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia" title="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia">Provincia</a> <sup class="type-c" title="class">c</sup>, <a href="#WasteFacility" title="https://w3id.org/def/medioambiente/residuos#WasteFacility">Waste Facility</a> <sup class="type-c" title="class">c</sup>
+    <a href="#https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio" title="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio">Barrio</a> <sup class="type-c" title="class">c</sup>, <a href="#CollectionPoint" title="https://w3id.org/def/medioambiente/residuos#CollectionPoint">Collection Point</a> <sup class="type-c" title="class">c</sup>, <a href="#https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito" title="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito">Distrito</a> <sup class="type-c" title="class">c</sup>, <a href="#https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio" title="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio">Municipio</a> <sup class="type-c" title="class">c</sup>, <a href="#https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia" title="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Provincia">Provincia</a> <sup class="type-c" title="class">c</sup>, <a href="#WasteContainer" title="https://w3id.org/def/medioambiente/residuos#WasteContainer">Waste Container</a> <sup class="type-c" title="class">c</sup>, <a href="#WasteFacility" title="https://w3id.org/def/medioambiente/residuos#WasteFacility">Waste Facility</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -198,6 +198,12 @@ This section provides details for each class and property defined by Ontology fo
   <h3>Geometry<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://www.opengis.net/ont/geosparql#Geometry</p>
   <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.opengis.net/ont/geosparql#asWKT" title="http://www.opengis.net/ont/geosparql#asWKT">as w k t</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -288,6 +294,12 @@ This section provides details for each class and property defined by Ontology fo
   <h3>Waste Container<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/def/medioambiente/residuos#WasteContainer</p>
   <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.opengis.net/ont/geosparql#Feature" title="http://www.opengis.net/ont/geosparql#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -574,6 +586,7 @@ This section provides details for each class and property defined by Ontology fo
  <h3 id="dataproperties-headline" class="list">Data Properties</h3>
  <ul class="hlist">
   <li><a href="#admissibleWasteURL" title="https://w3id.org/def/medioambiente/residuos#admissibleWasteURL">admissible waste u r l</a></li>
+  <li><a href="#http://www.opengis.net/ont/geosparql#asWKT" title="http://www.opengis.net/ont/geosparql#asWKT">as w k t</a></li>
   <li><a href="#https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#codigoPostal" title="https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#codigoPostal">codigo postal</a></li>
   <li><a href="#containerBatch" title="https://w3id.org/def/medioambiente/residuos#containerBatch">container batch</a></li>
   <li><a href="#containerLocationCode" title="https://w3id.org/def/medioambiente/residuos#containerLocationCode">container location code</a></li>
@@ -626,6 +639,26 @@ This section provides details for each class and property defined by Ontology fo
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#anyURI" target="_blank" title="http://www.w3.org/2001/XMLSchema#anyURI">any U R I</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.opengis.net/ont/geosparql#asWKT">
+  <h3>as w k t<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/ont/geosparql#asWKT</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.opengis.net/ont/geosparql#Geometry" title="http://www.opengis.net/ont/geosparql#Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.opengis.net/ont/geosparql#wktLiteral" target="_blank" title="http://www.opengis.net/ont/geosparql#wktLiteral">wkt Literal</a> <sup class="type-ep" title="external property">ep</sup>
     </dd>
    </dl>
   </div>
@@ -1380,5 +1413,6 @@ This section provides details for each class and property defined by Ontology fo
 <sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
 <sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
 <sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+<sup class="type-ep" title="External Properties">ep</sup>: External Properties
 </div>
 </div>
