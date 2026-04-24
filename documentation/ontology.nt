@@ -85,6 +85,8 @@
 # 
 # https://schema.org/address
 <https://schema.org/address> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/address> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/def/medioambiente/residuos#CollectionPoint> .
+<https://schema.org/address> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/def/medioambiente/residuos#WasteContainer> .
 <https://schema.org/address> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/def/medioambiente/residuos#WasteFacility> .
 <https://schema.org/address> <http://www.w3.org/2000/01/rdf-schema#range> <https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> .
 <https://schema.org/address> <http://www.w3.org/2000/01/rdf-schema#label> "address" .
@@ -118,15 +120,20 @@
 # 
 # https://w3id.org/def/medioambiente/residuos#belongsTo
 <https://w3id.org/def/medioambiente/residuos#belongsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/def/medioambiente/residuos#belongsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/def/medioambiente/residuos#CollectionPoint> .
+<https://w3id.org/def/medioambiente/residuos#belongsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/def/medioambiente/residuos#WasteContainer> .
 <https://w3id.org/def/medioambiente/residuos#belongsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/def/medioambiente/residuos#WasteFacility> .
 <https://w3id.org/def/medioambiente/residuos#belongsTo> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
-_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/def/medioambiente/residuos#belongsTo> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to" .
 # 

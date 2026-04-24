@@ -6,6 +6,8 @@
       "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio"
     }, {
       "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito"
+    }, {
+      "@id" : "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
     } ]
   } ]
 }, {
@@ -114,6 +116,10 @@
   "@id" : "https://schema.org/address",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/def/medioambiente/residuos#CollectionPoint"
+  }, {
+    "@id" : "https://w3id.org/def/medioambiente/residuos#WasteContainer"
+  }, {
     "@id" : "https://w3id.org/def/medioambiente/residuos#WasteFacility"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
@@ -488,6 +494,10 @@
   "@id" : "https://w3id.org/def/medioambiente/residuos#belongsTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/def/medioambiente/residuos#CollectionPoint"
+  }, {
+    "@id" : "https://w3id.org/def/medioambiente/residuos#WasteContainer"
+  }, {
     "@id" : "https://w3id.org/def/medioambiente/residuos#WasteFacility"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {

@@ -92,7 +92,9 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://schema.org/address
 <https://schema.org/address> rdf:type owl:ObjectProperty ;
-                             rdfs:domain :WasteFacility ;
+                             rdfs:domain :CollectionPoint ,
+                                         :WasteContainer ,
+                                         :WasteFacility ;
                              rdfs:range <https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> ;
                              rdfs:label "address" .
 
@@ -130,10 +132,13 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/def/medioambiente/residuos#belongsTo
 :belongsTo rdf:type owl:ObjectProperty ;
-           rdfs:domain :WasteFacility ;
+           rdfs:domain :CollectionPoint ,
+                       :WasteContainer ,
+                       :WasteFacility ;
            rdfs:range [ rdf:type owl:Class ;
                         owl:unionOf ( <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio>
                                       <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito>
+                                      <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio>
                                     )
                       ] ;
            rdfs:label "belongs to" .

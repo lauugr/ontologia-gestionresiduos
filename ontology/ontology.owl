@@ -165,6 +165,8 @@
 
 
     <owl:ObjectProperty rdf:about="https://schema.org/address">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteContainer"/>
         <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
         <rdfs:range rdf:resource="https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"/>
         <rdfs:label>address</rdfs:label>
@@ -223,12 +225,15 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/medioambiente/residuos#belongsTo">
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#CollectionPoint"/>
+        <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteContainer"/>
         <rdfs:domain rdf:resource="https://w3id.org/def/medioambiente/residuos#WasteFacility"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio"/>
                     <rdf:Description rdf:about="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito"/>
+                    <rdf:Description rdf:about="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
