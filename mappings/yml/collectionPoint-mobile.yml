@@ -2,6 +2,7 @@ prefixes:
   waste: "https://w3id.org/def/medioambiente/residuos#"
   esdir: "https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#"
   esadm: "https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"
+  gsp: "http://www.opengis.net/ont/geosparql#"
   xsd: "http://www.w3.org/2001/XMLSchema#"
   schema: "https://schema.org/"
 
@@ -16,10 +17,11 @@ mappings:
     po:
       - [a, waste:MobileCollectionPoint]
       - [schema:openingHours, $(Día de la semana) $(Turno) $(Hora de inicio)-$(Hora de fin), xsd:string]
-      - [schema:address, https://w3id.org/medioambiente/recurso/residuos/address/$(Código de distrito)-$(Tipo de vía)-$(Nombre de la vía)-$(Tipo de número)-$(Número)~iri]
       - [waste:admissibleWasteURL, $(Residuos admisibles), xsd:anyURI]
       - [schema:map, $(Google Maps), xsd:anyURI]
+      - [schema:address, https://w3id.org/medioambiente/recurso/residuos/address/$(Código de distrito)-$(Tipo de vía)-$(Nombre de la vía)-$(Tipo de número)-$(Número)~iri]
       - [waste:belongsTo, https://w3id.org/medioambiente/recurso/residuos/district/$(Distrito)~iri]
+      - [gsp:hasGeometry, https://w3id.org/medioambiente/recurso/residuos/geometry/collectionPoint/mobile/$(Código de distrito)-$(Tipo de vía)-$(Nombre de la vía)-$(Tipo de número)-$(Número)~iri]
 
   DireccionPostal:
     sources:
@@ -41,3 +43,11 @@ mappings:
     po:
       - [a, esadm:Distrito]
       - [schema:name, $(Distrito), xsd:string]
+
+  GeometryMobileCollectionPoint:
+    sources:
+      - mobileCollectionPoint-source
+    s: https://w3id.org/medioambiente/recurso/residuos/geometry/collectionPoint/mobile/$(Código de distrito)-$(Tipo de vía)-$(Nombre de la vía)-$(Tipo de número)-$(Número)
+    po:
+      - [a, gsp:Geometry]
+      - [gsp:asWKT, POINT($(Longitud (geo)) $(Latitud (geo))), gsp:wktLiteral]

@@ -27,6 +27,7 @@ mappings:
       - [waste:hasManagementScope, https://w3id.org/kos/medioambiente/residuos/managementScope/$(Alcance de la gestión)~iri]
       - [waste:hasTreatmentProcess, https://w3id.org/kos/medioambiente/residuos/treatmentProcess/$(Número de proceso)-$(Descripción del proceso)~iri]
       - [schema:address, https://w3id.org/medioambiente/recurso/residuos/address/$(Número de registro)~iri]
+      - [waste:belongsTo, https://w3id.org/medioambiente/recurso/residuos/municipality/$(Municipio)~iri]
       - [waste:managesWasteType, https://w3id.org/kos/medioambiente/residuos/wasteType/$(Código LER de residuo)~iri]
 
   ContactPoint:
@@ -72,15 +73,6 @@ mappings:
       - [waste:door, $(Puerta), xsd:string]
       - [waste:industrialPark, $(Polígono industrial), xsd:string]
 
-  WasteTypeConcept:
-    sources:
-      - wasteFacility-source
-    s: https://w3id.org/kos/medioambiente/residuos/wasteType/$(Código LER de residuo)
-    po:
-      - [a, skos:Concept]
-      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/wasteType~iri]
-      - [skos:prefLabel, $(Descripción del residuo), xsd:string]
-
   Municipality:
     sources:
       - wasteFacility-source
@@ -98,3 +90,12 @@ mappings:
       - [a, esadm:Provincia]
       - [waste:provinceCode, $(Código de provincia), xsd:string]
       - [schema:name, $(Provincia), xsd:string]
+
+  WasteTypeConcept:
+    sources:
+      - wasteFacility-source
+    s: https://w3id.org/kos/medioambiente/residuos/wasteType/$(Código LER de residuo)
+    po:
+      - [a, skos:Concept]
+      - [skos:inScheme, https://w3id.org/kos/medioambiente/residuos/wasteType~iri]
+      - [skos:prefLabel, $(Descripción del residuo), xsd:string]
