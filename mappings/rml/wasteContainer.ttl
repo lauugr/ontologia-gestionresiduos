@@ -13,36 +13,43 @@
 @prefix wastekos: <https://w3id.org/kos/medioambiente/residuos/> .
 @prefix esdir: <https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#> .
 @prefix esadm: <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 map:map_DireccionPostal_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "DireccionPostal" ;
-	rr:predicateObjectMap map:pom_013, map:pom_014 ;
-	rr:subjectMap map:s_002 .
+	rr:predicateObjectMap map:pom_011, map:pom_012 ;
+	rr:subjectMap map:s_001 .
 
 map:map_District_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "District" ;
+	rr:predicateObjectMap map:pom_015, map:pom_016 ;
+	rr:subjectMap map:s_003 .
+
+map:map_Geometry_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "Geometry" ;
 	rr:predicateObjectMap map:pom_017, map:pom_018 ;
 	rr:subjectMap map:s_004 .
 
 map:map_Neighborhood_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "Neighborhood" ;
-	rr:predicateObjectMap map:pom_015, map:pom_016 ;
-	rr:subjectMap map:s_003 .
+	rr:predicateObjectMap map:pom_013, map:pom_014 ;
+	rr:subjectMap map:s_002 .
 
 map:map_WasteContainer_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "WasteContainer" ;
-	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008, map:pom_009 ;
+	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008, map:pom_009, map:pom_010 ;
 	rr:subjectMap map:s_000 .
 
 map:map_WasteTypeConcept_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "WasteTypeConcept" ;
-	rr:predicateObjectMap map:pom_010, map:pom_011, map:pom_012 ;
-	rr:subjectMap map:s_001 .
+	rr:predicateObjectMap map:pom_019, map:pom_020, map:pom_021 ;
+	rr:subjectMap map:s_005 .
 
 map:om_000 rdf:type rr:ObjectMap ;
 	rr:constant waste:WasteContainer ;
@@ -74,57 +81,70 @@ map:om_005 rml:reference "Código de localización" ;
 	rr:termType rr:Literal .
 
 map:om_006 rdf:type rr:ObjectMap ;
-	rr:template "https://w3id.org/kos/medioambiente/residuos/wasteType/{Tipo de contenedor}" ;
-	rr:termType rr:IRI .
-
-map:om_007 rdf:type rr:ObjectMap ;
 	rr:template "https://w3id.org/medioambiente/recurso/residuos/address/{Código de localización}" ;
 	rr:termType rr:IRI .
 
-map:om_008 rdf:type rr:ObjectMap ;
+map:om_007 rdf:type rr:ObjectMap ;
 	rr:template "https://w3id.org/medioambiente/recurso/residuos/neighborhood/{Barrio}" ;
 	rr:termType rr:IRI .
 
-map:om_009 rdf:type rr:ObjectMap ;
+map:om_008 rdf:type rr:ObjectMap ;
 	rr:template "https://w3id.org/medioambiente/recurso/residuos/district/{Distrito}" ;
 	rr:termType rr:IRI .
 
+map:om_009 rdf:type rr:ObjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/geometry/container/{Código de localización}" ;
+	rr:termType rr:IRI .
+
 map:om_010 rdf:type rr:ObjectMap ;
-	rr:constant skos:Concept ;
+	rr:template "https://w3id.org/kos/medioambiente/residuos/wasteType/{Tipo de contenedor}" ;
 	rr:termType rr:IRI .
 
 map:om_011 rdf:type rr:ObjectMap ;
-	rr:constant wastekos:wasteType ;
+	rr:constant esdir:DireccionPostal ;
 	rr:termType rr:IRI .
 
-map:om_012 rml:reference "Tipo de contenedor" ;
+map:om_012 rml:reference "Dirección" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
 map:om_013 rdf:type rr:ObjectMap ;
-	rr:constant esdir:DireccionPostal ;
+	rr:constant esadm:Barrio ;
 	rr:termType rr:IRI .
 
-map:om_014 rml:reference "Dirección" ;
+map:om_014 rml:reference "Barrio" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
 map:om_015 rdf:type rr:ObjectMap ;
-	rr:constant esadm:Barrio ;
+	rr:constant esadm:Distrito ;
 	rr:termType rr:IRI .
 
-map:om_016 rml:reference "Barrio" ;
+map:om_016 rml:reference "Distrito" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
 map:om_017 rdf:type rr:ObjectMap ;
-	rr:constant esadm:Distrito ;
+	rr:constant gsp:Geometry ;
 	rr:termType rr:IRI .
 
-map:om_018 rml:reference "Distrito" ;
+map:om_018 rdf:type rr:ObjectMap ;
+	rr:datatype gsp:wktLiteral ;
+	rr:template "POINT({Longitud (geo)} {Latitud (geo)})" ;
+	rr:termType rr:Literal .
+
+map:om_019 rdf:type rr:ObjectMap ;
+	rr:constant skos:Concept ;
+	rr:termType rr:IRI .
+
+map:om_020 rdf:type rr:ObjectMap ;
+	rr:constant wastekos:wasteType ;
+	rr:termType rr:IRI .
+
+map:om_021 rml:reference "Tipo de contenedor" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
@@ -148,31 +168,31 @@ map:pm_005 rdf:type rr:PredicateMap ;
 	rr:constant waste:containerLocationCode .
 
 map:pm_006 rdf:type rr:PredicateMap ;
-	rr:constant waste:acceptsWasteType .
+	rr:constant schema:address .
 
 map:pm_007 rdf:type rr:PredicateMap ;
-	rr:constant schema:address .
+	rr:constant waste:belongsTo .
 
 map:pm_008 rdf:type rr:PredicateMap ;
 	rr:constant waste:belongsTo .
 
 map:pm_009 rdf:type rr:PredicateMap ;
-	rr:constant waste:belongsTo .
+	rr:constant gsp:hasGeometry .
 
 map:pm_010 rdf:type rr:PredicateMap ;
-	rr:constant rdf:type .
+	rr:constant waste:acceptsWasteType .
 
 map:pm_011 rdf:type rr:PredicateMap ;
-	rr:constant skos:inScheme .
+	rr:constant rdf:type .
 
 map:pm_012 rdf:type rr:PredicateMap ;
-	rr:constant skos:prefLabel .
+	rr:constant esdir:direccion .
 
 map:pm_013 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
 
 map:pm_014 rdf:type rr:PredicateMap ;
-	rr:constant esdir:direccion .
+	rr:constant schema:name .
 
 map:pm_015 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
@@ -184,7 +204,16 @@ map:pm_017 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
 
 map:pm_018 rdf:type rr:PredicateMap ;
-	rr:constant schema:name .
+	rr:constant gsp:asWKT .
+
+map:pm_019 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_020 rdf:type rr:PredicateMap ;
+	rr:constant skos:inScheme .
+
+map:pm_021 rdf:type rr:PredicateMap ;
+	rr:constant skos:prefLabel .
 
 map:pom_000 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_000 ;
@@ -262,23 +291,38 @@ map:pom_018 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_018 ;
 	rr:predicateMap map:pm_018 .
 
-map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_DireccionPostal_000, map:map_District_000, map:map_Neighborhood_000, map:map_WasteContainer_000, map:map_WasteTypeConcept_000 ;
+map:pom_019 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_019 ;
+	rr:predicateMap map:pm_019 .
+
+map:pom_020 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_020 ;
+	rr:predicateMap map:pm_020 .
+
+map:pom_021 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_021 ;
+	rr:predicateMap map:pm_021 .
+
+map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_DireccionPostal_000, map:map_District_000, map:map_Geometry_000, map:map_Neighborhood_000, map:map_WasteContainer_000, map:map_WasteTypeConcept_000 ;
 	rdf:type <http://rdfs.org/ns/void#Dataset> .
 
 map:s_000 rdf:type rr:SubjectMap ;
 	rr:template "https://w3id.org/medioambiente/recurso/residuos/wasteContainer/{Orden}" .
 
 map:s_001 rdf:type rr:SubjectMap ;
-	rr:template "https://w3id.org/kos/medioambiente/residuos/wasteType/{Tipo de contenedor}" .
-
-map:s_002 rdf:type rr:SubjectMap ;
 	rr:template "https://w3id.org/medioambiente/recurso/residuos/address/{Código de localización}" .
 
-map:s_003 rdf:type rr:SubjectMap ;
+map:s_002 rdf:type rr:SubjectMap ;
 	rr:template "https://w3id.org/medioambiente/recurso/residuos/neighborhood/{Barrio}" .
 
-map:s_004 rdf:type rr:SubjectMap ;
+map:s_003 rdf:type rr:SubjectMap ;
 	rr:template "https://w3id.org/medioambiente/recurso/residuos/district/{Distrito}" .
+
+map:s_004 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/geometry/container/{Código de localización}" .
+
+map:s_005 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/kos/medioambiente/residuos/wasteType/{Tipo de contenedor}" .
 
 map:source_000 rml:referenceFormulation ql:CSV ;
 	rml:source "dataset-enriquecido-4.csv" ;

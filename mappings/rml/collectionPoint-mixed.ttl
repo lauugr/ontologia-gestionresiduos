@@ -12,35 +12,48 @@
 @prefix waste: <https://w3id.org/def/medioambiente/residuos#> .
 @prefix esdir: <https://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#> .
 @prefix esadm: <https://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 map:map_ContactPoint_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "ContactPoint" ;
-	rr:predicateObjectMap map:pom_022, map:pom_023 ;
+	rr:predicateObjectMap map:pom_024, map:pom_025 ;
 	rr:subjectMap map:s_002 .
 
 map:map_DireccionPostal_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "DireccionPostal" ;
-	rr:predicateObjectMap map:pom_024, map:pom_025, map:pom_026 ;
+	rr:predicateObjectMap map:pom_026, map:pom_027, map:pom_028 ;
 	rr:subjectMap map:s_003 .
 
 map:map_District_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "District" ;
-	rr:predicateObjectMap map:pom_027, map:pom_028 ;
+	rr:predicateObjectMap map:pom_029, map:pom_030 ;
 	rr:subjectMap map:s_004 .
+
+map:map_GeometryMobileCollectionPoint_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "GeometryMobileCollectionPoint" ;
+	rr:predicateObjectMap map:pom_033, map:pom_034 ;
+	rr:subjectMap map:s_006 .
+
+map:map_GeometryPermanentCollectionPoint_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "GeometryPermanentCollectionPoint" ;
+	rr:predicateObjectMap map:pom_031, map:pom_032 ;
+	rr:subjectMap map:s_005 .
 
 map:map_MobileCollectionPoint_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "MobileCollectionPoint" ;
-	rr:predicateObjectMap map:pom_011, map:pom_012, map:pom_013, map:pom_014, map:pom_015, map:pom_016, map:pom_017, map:pom_018, map:pom_019, map:pom_020, map:pom_021 ;
+	rr:predicateObjectMap map:pom_012, map:pom_013, map:pom_014, map:pom_015, map:pom_016, map:pom_017, map:pom_018, map:pom_019, map:pom_020, map:pom_021, map:pom_022, map:pom_023 ;
 	rr:subjectMap map:s_001 .
 
 map:map_PermanentCollectionPoint_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "PermanentCollectionPoint" ;
-	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008, map:pom_009, map:pom_010 ;
+	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008, map:pom_009, map:pom_010, map:pom_011 ;
 	rr:subjectMap map:s_000 .
 
 map:om_000 rdf:type rr:ObjectMap ;
@@ -83,11 +96,11 @@ map:om_007 rml:reference "Fecha de última actualización" ;
 	rr:termType rr:Literal .
 
 map:om_008 rdf:type rr:ObjectMap ;
-	rr:template "https://w3id.org/medioambiente/recurso/residuos/address/{Identificador}" ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/contactPoint/{Identificador}" ;
 	rr:termType rr:IRI .
 
 map:om_009 rdf:type rr:ObjectMap ;
-	rr:template "https://w3id.org/medioambiente/recurso/residuos/contactPoint/{Identificador}" ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/address/{Identificador}" ;
 	rr:termType rr:IRI .
 
 map:om_010 rdf:type rr:ObjectMap ;
@@ -95,86 +108,112 @@ map:om_010 rdf:type rr:ObjectMap ;
 	rr:termType rr:IRI .
 
 map:om_011 rdf:type rr:ObjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/geometry/collectionPoint/permanent/{Identificador}" ;
+	rr:termType rr:IRI .
+
+map:om_012 rdf:type rr:ObjectMap ;
 	rr:constant waste:MobileCollectionPoint ;
 	rr:termType rr:IRI .
 
-map:om_012 rml:reference "Identificador" ;
+map:om_013 rml:reference "Identificador" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_013 rml:reference "Nombre" ;
+map:om_014 rml:reference "Nombre" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_014 rml:reference "Titularidad pública" ;
+map:om_015 rml:reference "Titularidad pública" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:boolean ;
 	rr:termType rr:Literal .
 
-map:om_015 rml:reference "Horas de apertura" ;
+map:om_016 rml:reference "Horas de apertura" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_016 rml:reference "Descripción" ;
+map:om_017 rml:reference "Descripción" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_017 rml:reference "Fecha de creación" ;
+map:om_018 rml:reference "Fecha de creación" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:dateTime ;
 	rr:termType rr:Literal .
 
-map:om_018 rml:reference "Fecha de última actualización" ;
+map:om_019 rml:reference "Fecha de última actualización" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:dateTime ;
 	rr:termType rr:Literal .
-
-map:om_019 rdf:type rr:ObjectMap ;
-	rr:template "https://w3id.org/medioambiente/recurso/residuos/address/{Identificador}" ;
-	rr:termType rr:IRI .
 
 map:om_020 rdf:type rr:ObjectMap ;
 	rr:template "https://w3id.org/medioambiente/recurso/residuos/contactPoint/{Identificador}" ;
 	rr:termType rr:IRI .
 
 map:om_021 rdf:type rr:ObjectMap ;
-	rr:template "https://w3id.org/medioambiente/recurso/residuos/district/{Distrito}" ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/address/{Identificador}" ;
 	rr:termType rr:IRI .
 
 map:om_022 rdf:type rr:ObjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/district/{Distrito}" ;
+	rr:termType rr:IRI .
+
+map:om_023 rdf:type rr:ObjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/geometry/collectionPoint/mobile/{Identificador}" ;
+	rr:termType rr:IRI .
+
+map:om_024 rdf:type rr:ObjectMap ;
 	rr:constant schema:ContactPoint ;
 	rr:termType rr:IRI .
 
-map:om_023 rml:reference "Teléfono" ;
+map:om_025 rml:reference "Teléfono" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_024 rdf:type rr:ObjectMap ;
+map:om_026 rdf:type rr:ObjectMap ;
 	rr:constant esdir:DireccionPostal ;
 	rr:termType rr:IRI .
 
-map:om_025 rml:reference "Dirección" ;
+map:om_027 rml:reference "Dirección" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_026 rml:reference "Código postal" ;
+map:om_028 rml:reference "Código postal" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_027 rdf:type rr:ObjectMap ;
+map:om_029 rdf:type rr:ObjectMap ;
 	rr:constant esadm:Distrito ;
 	rr:termType rr:IRI .
 
-map:om_028 rml:reference "Distrito" ;
+map:om_030 rml:reference "Distrito" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:string ;
+	rr:termType rr:Literal .
+
+map:om_031 rdf:type rr:ObjectMap ;
+	rr:constant gsp:Geometry ;
+	rr:termType rr:IRI .
+
+map:om_032 rdf:type rr:ObjectMap ;
+	rr:datatype gsp:wktLiteral ;
+	rr:template "POINT({Longitud (geo)} {Latitud (geo)})" ;
+	rr:termType rr:Literal .
+
+map:om_033 rdf:type rr:ObjectMap ;
+	rr:constant gsp:Geometry ;
+	rr:termType rr:IRI .
+
+map:om_034 rdf:type rr:ObjectMap ;
+	rr:datatype gsp:wktLiteral ;
+	rr:template "POINT({Longitud (geo)} {Latitud (geo)})" ;
 	rr:termType rr:Literal .
 
 map:pm_000 rdf:type rr:PredicateMap ;
@@ -202,67 +241,85 @@ map:pm_007 rdf:type rr:PredicateMap ;
 	rr:constant schema:dateModified .
 
 map:pm_008 rdf:type rr:PredicateMap ;
-	rr:constant schema:address .
+	rr:constant schema:contactPoint .
 
 map:pm_009 rdf:type rr:PredicateMap ;
-	rr:constant schema:contactPoint .
+	rr:constant schema:address .
 
 map:pm_010 rdf:type rr:PredicateMap ;
 	rr:constant waste:belongsTo .
 
 map:pm_011 rdf:type rr:PredicateMap ;
-	rr:constant rdf:type .
+	rr:constant gsp:hasGeometry .
 
 map:pm_012 rdf:type rr:PredicateMap ;
-	rr:constant dcterms:identifier .
+	rr:constant rdf:type .
 
 map:pm_013 rdf:type rr:PredicateMap ;
-	rr:constant schema:name .
+	rr:constant dcterms:identifier .
 
 map:pm_014 rdf:type rr:PredicateMap ;
-	rr:constant waste:isPubliclyOwned .
+	rr:constant schema:name .
 
 map:pm_015 rdf:type rr:PredicateMap ;
-	rr:constant schema:openingHours .
+	rr:constant waste:isPubliclyOwned .
 
 map:pm_016 rdf:type rr:PredicateMap ;
-	rr:constant schema:description .
+	rr:constant schema:openingHours .
 
 map:pm_017 rdf:type rr:PredicateMap ;
-	rr:constant schema:dateCreated .
+	rr:constant schema:description .
 
 map:pm_018 rdf:type rr:PredicateMap ;
-	rr:constant schema:dateModified .
+	rr:constant schema:dateCreated .
 
 map:pm_019 rdf:type rr:PredicateMap ;
-	rr:constant schema:address .
+	rr:constant schema:dateModified .
 
 map:pm_020 rdf:type rr:PredicateMap ;
 	rr:constant schema:contactPoint .
 
 map:pm_021 rdf:type rr:PredicateMap ;
-	rr:constant waste:belongsTo .
+	rr:constant schema:address .
 
 map:pm_022 rdf:type rr:PredicateMap ;
-	rr:constant rdf:type .
+	rr:constant waste:belongsTo .
 
 map:pm_023 rdf:type rr:PredicateMap ;
-	rr:constant schema:telephone .
+	rr:constant gsp:hasGeometry .
 
 map:pm_024 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
 
 map:pm_025 rdf:type rr:PredicateMap ;
-	rr:constant esdir:direccion .
+	rr:constant schema:telephone .
 
 map:pm_026 rdf:type rr:PredicateMap ;
-	rr:constant esdir:codigoPostal .
-
-map:pm_027 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
 
+map:pm_027 rdf:type rr:PredicateMap ;
+	rr:constant esdir:direccion .
+
 map:pm_028 rdf:type rr:PredicateMap ;
+	rr:constant esdir:codigoPostal .
+
+map:pm_029 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_030 rdf:type rr:PredicateMap ;
 	rr:constant schema:name .
+
+map:pm_031 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_032 rdf:type rr:PredicateMap ;
+	rr:constant gsp:asWKT .
+
+map:pm_033 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_034 rdf:type rr:PredicateMap ;
+	rr:constant gsp:asWKT .
 
 map:pom_000 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_000 ;
@@ -380,7 +437,31 @@ map:pom_028 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_028 ;
 	rr:predicateMap map:pm_028 .
 
-map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_ContactPoint_000, map:map_DireccionPostal_000, map:map_District_000, map:map_MobileCollectionPoint_000, map:map_PermanentCollectionPoint_000 ;
+map:pom_029 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_029 ;
+	rr:predicateMap map:pm_029 .
+
+map:pom_030 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_030 ;
+	rr:predicateMap map:pm_030 .
+
+map:pom_031 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_031 ;
+	rr:predicateMap map:pm_031 .
+
+map:pom_032 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_032 ;
+	rr:predicateMap map:pm_032 .
+
+map:pom_033 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_033 ;
+	rr:predicateMap map:pm_033 .
+
+map:pom_034 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_034 ;
+	rr:predicateMap map:pm_034 .
+
+map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_ContactPoint_000, map:map_DireccionPostal_000, map:map_District_000, map:map_GeometryMobileCollectionPoint_000, map:map_GeometryPermanentCollectionPoint_000, map:map_MobileCollectionPoint_000, map:map_PermanentCollectionPoint_000 ;
 	rdf:type <http://rdfs.org/ns/void#Dataset> .
 
 map:s_000 rdf:type rr:SubjectMap ;
@@ -397,6 +478,12 @@ map:s_003 rdf:type rr:SubjectMap ;
 
 map:s_004 rdf:type rr:SubjectMap ;
 	rr:template "https://w3id.org/medioambiente/recurso/residuos/district/{Distrito}" .
+
+map:s_005 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/geometry/collectionPoint/permanent/{Identificador}" .
+
+map:s_006 rdf:type rr:SubjectMap ;
+	rr:template "https://w3id.org/medioambiente/recurso/residuos/geometry/collectionPoint/mobile/{Identificador}" .
 
 map:source_000 rml:referenceFormulation ql:CSV ;
 	rml:source "dataset-enriquecido-3.csv" ;
